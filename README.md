@@ -1,2 +1,1 @@
-# creatorflow
-Advanced MVP storefront for creators (built with Jules)
+Jules trigger: build Next.js 13 + TailwindCSS + Supabase scaffold
