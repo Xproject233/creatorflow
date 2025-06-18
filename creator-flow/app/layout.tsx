@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Layout from "../components/Layout"; // Adjusted import path
+import Layout from "../components/Layout";
+import { AuthProvider } from "../components/AuthContext"; // Import AuthProvider
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CreatorFlow", // Changed title
-  description: "The ultimate platform to streamline your content creation workflow.", // Changed description
+  title: "CreatorFlow",
+  description: "The ultimate platform to streamline your content creation workflow.",
 };
 
 export default function RootLayout({
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Layout>{children}</Layout>
+        <AuthProvider> {/* Wrap with AuthProvider */}
+          <Layout>{children}</Layout>
+        </AuthProvider>
       </body>
     </html>
   );
